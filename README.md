@@ -7,6 +7,5 @@
 2. src/main/webapp 이하에 설정파일을 등록함으로 src/main/resource, src/main/webapp에 설정파일이 분리되는 현상 발생 
    설정파일만 잘 정리할 수 있도록 src/main/resource에서 처리하는 것이 좋아보임
 3. db connection info 암호화시 JASPTY를 사용하여 PBEWithMD5AndDES 암호화를 했지만, 더 좋은 암호화 기능이 있는지 알아보고 싶음
-
   3-1. 현재 찾은 것은 JASPTY이외에 블록방식의 암호화 방법인 aria가 있었음 
 4. 추후 ca를 등록하여 서버 통신간의 정보를 암호화하는 테스트를 해보았으면 함
