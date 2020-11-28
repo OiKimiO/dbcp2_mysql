@@ -49,10 +49,15 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/spring/servlet-context.xml</param-value>
+			<param-value>classpath:/**/servlet-context.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	
+	<context-param>
+	    <param-name>log4jConfiguration</param-name>	
+	    <param-value>classpath:/**/log4j2.xml</param-value>
+	</context-param>
 	
 	<!-- 자식 서블릿을 사용하기 위한 설정 -->
 	<listener>
@@ -62,7 +67,7 @@
 	<!-- 부모 서블릿을 같이 사용하는 자식 서블릿 등록 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/childContainer/*-context.xml</param-value>
+		<param-value>classpath:/**/*-context.xml</param-value>
 	</context-param>
 		
 	<servlet-mapping>

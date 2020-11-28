@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" >
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+    	<logger name="jdbc" level="OFF"/>
+  
+	    <logger name="jdbc.sqlonly" level="OFF"/>
+	    <logger name="jdbc.sqltiming" level="INFO"/>
+	    <logger name="jdbc.audit" level="OFF"/>
+	    <logger name="jdbc.resultset" level="OFF"/>
+	    <logger name="jdbc.resultsettable" level="INFO"/>
+	    <logger name="jdbc.connection" level="OFF"/>
+        <Root level="INFO">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>
