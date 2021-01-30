@@ -3,7 +3,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="homeMap">
 
-<resultMap id="homeMapFile" type="com.eh.homeVo.homeVo">
+<resultMap id="homeMapFile" type="com.eh.home.vo.homeVo">
 	<result property="idtest_table" column="IDTEST_TABLE" />
 	<result property="test_name"    column="TEST_NAME"    />
 </resultMap>

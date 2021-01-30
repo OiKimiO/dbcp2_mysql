@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+ * 로그인 관련 SQL
+ * @Copyright : Copyright (c) 2020
+ * @Author    : 김은호
+ * @Create    : 2020년 12월 19일
+ * @Title     : Auth_SQL.xml
+ * @version   : 1.0
+ * @stereotype Sql
+  -->
+<mapper namespace="loginMap">
+
+<select id="selectUserAuthOne" resultType="string">
+/* security.auth.selectUserAuthOne 로그인 권한을 들고옴 */
+SELECT AUTH  
+  FROM test1.AUTHORITIES
+ WHERE USERID = #{inputUserId}
+</select>
+
+<resultMap type="com.eh.login.vo.UserInfoVO" id="userInfo" autoMapping="true"></resultMap>
+<select id="selectUserInfoOne" resultMap="userInfo">
+/* security.auth.selectUserInfoOne 로그인 데이터 들고오기  */
+SELECT  USERID as userId
+	  , USERPW as userPw
+  FROM test1.USERS  
+ WHERE USERID = #{inputUserId}
+</select>
+
+<insert id="join"> 
+    INSERT INTO test1.users(userId, userPw,username,regdate) VALUES (#{userId}, #{userPw},#{userName},DATE_FORMAT(now(), '%Y-%m-%d')) 
+</insert>
+
+<insert id="auth"> 
+    INSERT INTO test1.authorities VALUES (#{userId}, 'USER') 
+</insert>
+
+</mapper>

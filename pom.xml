@@ -13,6 +13,8 @@
 		<org.aspectj-version>1.9.5</org.aspectj-version>
 		<org.slf4j-version>1.7.30</org.slf4j-version>
 		<org.tomcat-version>9.0.29</org.tomcat-version>
+		<spring.security.version>5.2.1.RELEASE</spring.security.version>
+		<jackson.version>2.10.1</jackson.version>		
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -66,26 +68,35 @@
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
-		</dependency>
-				
-		<!-- Servlet -->
-		<!-- <dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<scope>provided</scope>
-		</dependency>
+		</dependency>				
+		
+		<!-- jackson Start -->
+		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-			<scope>provided</scope>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
+		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency> -->
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<!-- http://mvnrepository.com/artifact/org.codehaus.jackson/jackson-core-asl -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		<!-- jackson End -->
+		
 		
 		<!-- Servlet -->
 		<dependency>
@@ -102,8 +113,26 @@
 		    <groupId>org.eclipse.jetty</groupId>
 		    <artifactId>apache-jstl</artifactId>
 		    <version>9.4.25.v20191220</version>
+		</dependency>		
+		
+		<!-- Spring Security Start 인터넷 연결 문제로 주석 처리(lib로 이동) -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>${org.springframework-version}</version>
 		</dependency>
-
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<!-- Spring Security End -->
+		
 		
 		<!-- Test -->
 		<dependency>
@@ -156,6 +185,15 @@
 			<version>8.0.20</version>
 		</dependency>		
 	 
+        <!-- lombok dependency -->
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.10</version>
+		    <scope>provided</scope>
+		</dependency>
+
         <!-- Spring-test -->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
         <dependency>

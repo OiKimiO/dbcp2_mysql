@@ -5,8 +5,10 @@
 <configuration>	
 	
 	<typeAliases></typeAliases>
-<mappers>
+	
+	<mappers>
 		<mapper resource="myBatis/sqlmaps/home.xml" />
+		<mapper resource="myBatis/sqlmaps/security/Auth_SQL.xml" />
 	</mappers>
 	
 </configuration>
